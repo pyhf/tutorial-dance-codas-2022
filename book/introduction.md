@@ -121,7 +121,7 @@ See our [installation docs](https://pyhf.readthedocs.io/en/v0.6.3/installation.h
 
 ### Dependencies for this tutorial
 
-To get all the dependencies needed for this tutorial you can just install from the included `requirements.txt` in the top level `binder/` directory of [the source repository](https://github.com/pyhf/pyhf-tutorial)
+To get all the dependencies needed for this tutorial you can just install from the included `requirements.txt` in the top level `binder/` directory of [the source repository](https://github.com/pyhf/tutorial-dance-codas-2022)
 
 ```
 (pyhf-tutorial) $ python -m pip install -r binder/requirements.txt
