@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualization &#8212; pyhf Tutorial</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">pyhf Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   pyhf Tutorial
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Get started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="HelloWorld.html">
+   Introduction to HistFactory Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SimpleWorkspace.html">
+   Introduction to Workspaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SerializationAndPatching.html">
+   Using HEPData
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Common use and applications
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="PullPlot.html">
+   Making a Pull Plot
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Toys.html">
+   Playing with Toys
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Combinations.html">
+   Performing a Combination
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  More Information
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="IntroToHiFa.html">
+   HistFactory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="WorkspaceManipulations.html">
+   Workspace Manipulations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Modifiers.html">
+   Modifiers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UsingCalculators.html">
+   Using Calculators
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Learn Fundamentals
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="InterpolationCodes.html">
+   Piecewise Linear Interpolation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/visualization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pyhf/tutorial-dance-codas-2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pyhf/tutorial-dance-codas-2022/issues/new?title=Issue%20on%20page%20%2Fvisualization.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/pyhf/tutorial-dance-codas-2022/edit/main/book/visualization.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pyhf/tutorial-dance-codas-2022/main?urlpath=lab/tree/book/visualization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/pyhf/tutorial-dance-codas-2022/blob/main/book/visualization.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization-with-altair">
+   Visualization with Altair
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-the-data">
+   Preparing the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-the-chart">
+   Defining the Chart
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Visualization</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization-with-altair">
+   Visualization with Altair
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preparing-the-data">
+   Preparing the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-the-chart">
+   Defining the Chart
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="visualization">
+<h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="visualization-with-altair">
+<h2>Visualization with Altair<a class="headerlink" href="#visualization-with-altair" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://altair-viz.github.io/">Altair</a> is a python API for generating <a class="reference external" href="https://vega.github.io/">Vega</a> visuazliation specifications. We demonstracte how to use this to build an interactive chart of pyhf results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">import</span> <span class="nn">pyhf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="preparing-the-data">
+<h2>Preparing the data<a class="headerlink" href="#preparing-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Altair reads the data as a pandas dataframe, so we create one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data/2-bin_1-channel.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">serialized</span><span class="p">:</span>
+    <span class="n">spec</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">serialized</span><span class="p">)</span>
+
+<span class="n">workspace</span> <span class="o">=</span> <span class="n">pyhf</span><span class="o">.</span><span class="n">Workspace</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">poi_name</span><span class="o">=</span><span class="s2">&quot;mu&quot;</span><span class="p">)</span>
+<span class="n">pars</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">suggested_init</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muscan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">pyhf</span><span class="o">.</span><span class="n">infer</span><span class="o">.</span><span class="n">hypotest</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">test_stat</span><span class="o">=</span><span class="s2">&quot;qtilde&quot;</span><span class="p">,</span> <span class="n">return_expected_set</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">mu</span> <span class="ow">in</span> <span class="n">muscan</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/__t/Python/3.9.13/x64/lib/python3.9/site-packages/pyhf/infer/calculators.py:369: RuntimeWarning: invalid value encountered in double_scalars
+  teststat = (qmu - qmu_A) / (2 * self.sqrtqmuA_v)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">muscan</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="s2">&quot;obs&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;exp_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mu</th>
+      <th>obs</th>
+      <th>exp_0</th>
+      <th>exp_1</th>
+      <th>exp_2</th>
+      <th>exp_3</th>
+      <th>exp_4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.166667</td>
+      <td>0.894530</td>
+      <td>0.696453</td>
+      <td>0.790515</td>
+      <td>0.882095</td>
+      <td>0.954194</td>
+      <td>0.990498</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.333333</td>
+      <td>0.810668</td>
+      <td>0.475107</td>
+      <td>0.613354</td>
+      <td>0.766450</td>
+      <td>0.902086</td>
+      <td>0.977963</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.500000</td>
+      <td>0.743778</td>
+      <td>0.317370</td>
+      <td>0.466875</td>
+      <td>0.655513</td>
+      <td>0.844090</td>
+      <td>0.961774</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.666667</td>
+      <td>0.663839</td>
+      <td>0.207535</td>
+      <td>0.348494</td>
+      <td>0.551450</td>
+      <td>0.780946</td>
+      <td>0.941317</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="defining-the-chart">
+<h2>Defining the Chart<a class="headerlink" href="#defining-the-chart" title="Permalink to this headline">¶</a></h2>
+<p>We need to filled areas for the 1,2 sigma bands and two lines for the expected and observed CLs value. For interactivity we add a hovering label of the observed result</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">band1</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_area</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;exp_1&quot;</span><span class="p">,</span> <span class="n">y2</span><span class="o">=</span><span class="s2">&quot;exp_3&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">band2</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_area</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;exp_0&quot;</span><span class="p">,</span> <span class="n">y2</span><span class="o">=</span><span class="s2">&quot;exp_4&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">line1</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;obs&quot;</span><span class="p">)</span>
+
+<span class="n">line2</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">strokeDash</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;exp_2&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">nearest</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">selection_single</span><span class="p">(</span>
+    <span class="n">nearest</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mu&quot;</span><span class="p">],</span> <span class="n">empty</span><span class="o">=</span><span class="s2">&quot;none&quot;</span>
+<span class="p">)</span>
+
+
+<span class="n">point</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_point</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;mu&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;obs&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">nearest</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
+    <span class="o">.</span><span class="n">add_selection</span><span class="p">(</span><span class="n">nearest</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="n">line1</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span><span class="n">align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">dy</span><span class="o">=-</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">text</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">condition</span><span class="p">(</span><span class="n">nearest</span><span class="p">,</span> <span class="s2">&quot;obs&quot;</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))</span>
+<span class="p">)</span>
+
+
+<span class="n">band2</span> <span class="o">+</span> <span class="n">band1</span> <span class="o">+</span> <span class="n">line1</span> <span class="o">+</span> <span class="n">line2</span> <span class="o">+</span> <span class="n">point</span> <span class="o">+</span> <span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-62cb88849a9f47f183d34caf84b26a64"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-62cb88849a9f47f183d34caf84b26a64") {
+      outputDiv = document.getElementById("altair-viz-62cb88849a9f47f183d34caf84b26a64");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "area", "color": "yellow", "opacity": 0.5}, "encoding": {"x": {"field": "mu", "type": "quantitative"}, "y": {"field": "exp_0", "type": "quantitative"}, "y2": {"field": "exp_4"}}}, {"mark": {"type": "area", "color": "green", "opacity": 0.5}, "encoding": {"x": {"field": "mu", "type": "quantitative"}, "y": {"field": "exp_1", "type": "quantitative"}, "y2": {"field": "exp_3"}}}, {"mark": {"type": "line", "color": "black"}, "encoding": {"x": {"field": "mu", "type": "quantitative"}, "y": {"field": "obs", "type": "quantitative"}}}, {"mark": {"type": "line", "color": "black", "strokeDash": [5, 5]}, "encoding": {"x": {"field": "mu", "type": "quantitative"}, "y": {"field": "exp_2", "type": "quantitative"}}}, {"mark": {"type": "point", "color": "black"}, "encoding": {"opacity": {"condition": {"value": 1, "selection": "selector001"}, "value": 0}, "x": {"field": "mu", "type": "quantitative"}, "y": {"field": "obs", "type": "quantitative"}}, "selection": {"selector001": {"type": "single", "nearest": true, "on": "mouseover", "fields": ["mu"], "empty": "none"}}}, {"mark": {"type": "text", "align": "left", "dx": 5, "dy": -5}, "encoding": {"text": {"condition": {"field": "obs", "type": "quantitative", "selection": "selector001"}, "value": " "}, "x": {"field": "mu", "type": "quantitative"}, "y": {"field": "obs", "type": "quantitative"}}}], "data": {"name": "data-7e2da49226e1e8523a50a9da5860dba1"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-7e2da49226e1e8523a50a9da5860dba1": [{"mu": 0.0, "obs": null, "exp_0": 1.0, "exp_1": 1.0, "exp_2": 1.0, "exp_3": 1.0, "exp_4": 1.0}, {"mu": 0.16666666666666666, "obs": 0.8945301782593317, "exp_0": 0.6964530080728437, "exp_1": 0.7905153838803919, "exp_2": 0.882094730503221, "exp_3": 0.9541935383925749, "exp_4": 0.9904984869645007}, {"mu": 0.3333333333333333, "obs": 0.8106680837393424, "exp_0": 0.4751071493951282, "exp_1": 0.613353568622496, "exp_2": 0.766449524708889, "exp_3": 0.902085853299212, "exp_4": 0.9779626637660586}, {"mu": 0.5, "obs": 0.7437778566398822, "exp_0": 0.3173696420859844, "exp_1": 0.46687490702006784, "exp_2": 0.6555125417182542, "exp_3": 0.8440897175092033, "exp_4": 0.9617742967424123}, {"mu": 0.6666666666666666, "obs": 0.6638385915664857, "exp_0": 0.2075351602297716, "exp_1": 0.3484935577274175, "exp_2": 0.5514500744575337, "exp_3": 0.7809460782169511, "exp_4": 0.9413168899830243}, {"mu": 0.8333333333333333, "obs": 0.5782021625921544, "exp_0": 0.1328180252941504, "exp_1": 0.2549896383846101, "exp_2": 0.45601474690202537, "exp_3": 0.7137077413420335, "exp_4": 0.9160230775184648}, {"mu": 1.0, "obs": 0.49567314404153573, "exp_0": 0.08316830648568728, "exp_1": 0.18282140381206083, "exp_2": 0.37045914901809585, "exp_3": 0.6436940740179501, "exp_4": 0.8854308821740203}, {"mu": 1.1666666666666665, "obs": 0.417923434706395, "exp_0": 0.050944653472008675, "exp_1": 0.12839963299271492, "exp_2": 0.29549618500894415, "exp_3": 0.5724159438326807, "exp_4": 0.8492430162992255}, {"mu": 1.3333333333333333, "obs": 0.34633336819399213, "exp_0": 0.030520655088162443, "exp_1": 0.08830834917309204, "exp_2": 0.23131048916823438, "exp_3": 0.5014801844899229, "exp_4": 0.8073836340723948}, {"mu": 1.5, "obs": 0.2819170076502912, "exp_0": 0.017879994664689647, "exp_1": 0.05945966701199822, "exp_2": 0.1776117649659219, "exp_3": 0.43248105376027646, "exp_4": 0.7600437518434856}, {"mu": 1.6666666666666665, "obs": 0.2252852713937922, "exp_0": 0.010241241765201291, "exp_1": 0.039184993648738405, "exp_2": 0.13372137090948405, "exp_3": 0.3668922819700299, "exp_4": 0.7077082422488398}, {"mu": 1.8333333333333333, "obs": 0.17664676800058912, "exp_0": 0.005734464460776373, "exp_1": 0.025269689613500637, "exp_2": 0.098678015650301, "exp_3": 0.3059714889522974, "exp_4": 0.6511579132810227}, {"mu": 2.0, "obs": 0.13584312183147845, "exp_0": 0.003138638058825607, "exp_1": 0.015943404600660526, "exp_2": 0.07134862203149582, "exp_3": 0.25068736954429477, "exp_4": 0.5914429699302315}, {"mu": 2.1666666666666665, "obs": 0.1024109921379404, "exp_0": 0.001679040054686875, "exp_1": 0.00983996511427855, "exp_2": 0.05053220886741, "exp_3": 0.20167698005769524, "exp_4": 0.5298281970846755}, {"mu": 2.333333333333333, "obs": 0.07566060708577076, "exp_0": 0.0008778612227253052, "exp_1": 0.00593990594358013, "exp_2": 0.03504746264406085, "exp_3": 0.1592355910160876, "exp_4": 0.46771391951883357}, {"mu": 2.5, "obs": 0.05476000995373944, "exp_0": 0.0004485589314309209, "exp_1": 0.003506655201142606, "exp_2": 0.02379875417746402, "exp_3": 0.12333741850686852, "exp_4": 0.4065408941269627}, {"mu": 2.6666666666666665, "obs": 0.0388152061400757, "exp_0": 0.00022399392793900314, "exp_1": 0.002024415872214342, "exp_2": 0.015819039403527246, "exp_3": 0.09368150993415589, "exp_4": 0.34768983338059084}, {"mu": 2.833333333333333, "obs": 0.026938694793054052, "exp_0": 0.00010931521864241736, "exp_1": 0.0011428171174998841, "exp_2": 0.010291240696895644, "exp_3": 0.06975447375545923, "exp_4": 0.29238721451886884}, {"mu": 3.0, "obs": 0.01830188682714181, "exp_0": 5.2139576671113216e-05, "exp_1": 0.0006308303709063915, "exp_2": 0.006551862247529017, "exp_3": 0.05090080773253039, "exp_4": 0.24162823759960655}, {"mu": 3.1666666666666665, "obs": 0.012169826179547961, "exp_0": 2.430646958758968e-05, "exp_1": 0.0003404920462974801, "exp_2": 0.004081619268562999, "exp_3": 0.03639203888605197, "exp_4": 0.19612499919261966}, {"mu": 3.333333333333333, "obs": 0.007919214904019319, "exp_0": 1.1075893694157957e-05, "exp_1": 0.00017970924612403536, "exp_2": 0.0024879716430662936, "exp_3": 0.025487680330859727, "exp_4": 0.15628414591035047}, {"mu": 3.5, "obs": 0.005042478479745012, "exp_0": 4.933815296518767e-06, "exp_1": 9.275216570980033e-05, "exp_2": 0.0014838523803900189, "exp_3": 0.01748344361667774, "exp_4": 0.12221394525719362}, {"mu": 3.6666666666666665, "obs": 0.003141516709234466, "exp_0": 2.148761793522189e-06, "exp_1": 4.681652570806715e-05, "exp_2": 0.0008658996176192932, "exp_3": 0.011744739134995174, "exp_4": 0.0937567775781297}, {"mu": 3.833333333333333, "obs": 0.00191492154512906, "exp_0": 9.150779190792079e-07, "exp_1": 2.3111969076403676e-05, "exp_2": 0.0004944095295769194, "exp_3": 0.007725774949956317, "exp_4": 0.0705401579011924}, {"mu": 4.0, "obs": 0.001142022868454967, "exp_0": 3.811220464659697e-07, "exp_1": 1.1160609858315247e-05, "exp_2": 0.0002762297524833853, "exp_3": 0.004976227150759419, "exp_4": 0.0520379162320286}, {"mu": 4.166666666666666, "obs": 0.000666375624584726, "exp_0": 1.552695111592569e-07, "exp_1": 5.272439441253403e-06, "exp_2": 0.0001510256661120096, "exp_3": 0.003138403047222987, "exp_4": 0.037633234577288094}, {"mu": 4.333333333333333, "obs": 0.00038045551821844773, "exp_0": 6.188879089392555e-08, "exp_1": 2.4371141157086654e-06, "exp_2": 8.081090220152411e-05, "exp_3": 0.0019380785670452172, "exp_4": 0.026676508584663913}, {"mu": 4.5, "obs": 0.0002125495498248519, "exp_0": 2.4139941877161827e-08, "exp_1": 1.1024439193785689e-06, "exp_2": 4.23232975839013e-05, "exp_3": 0.0011719361299832882, "exp_4": 0.018533078831657744}, {"mu": 4.666666666666666, "obs": 0.00011620622489610133, "exp_0": 9.21637505791084e-09, "exp_1": 4.88131285349511e-07, "exp_2": 2.1698987879444017e-05, "exp_3": 0.0006939582245989528, "exp_4": 0.01261824742716056}, {"mu": 4.833333333333333, "obs": 6.218169122055316e-05, "exp_0": 3.4450144712912762e-09, "exp_1": 2.1159536944447593e-07, "exp_2": 1.0892259685716747e-05, "exp_3": 0.0004024359577984776, "exp_4": 0.00841918811744636}, {"mu": 5.0, "obs": 3.257014957908888e-05, "exp_0": 1.2610771727012432e-09, "exp_1": 8.981753226463676e-08, "exp_2": 5.35414948709495e-06, "exp_3": 0.0002285814951871601, "exp_4": 0.005505056395589713}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By the pyhf development team<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
