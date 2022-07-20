@@ -1,14 +1,14 @@
-# `pyhf` Tutorial
+# [DANCE/CoDaS Workshop 2022 `pyhf` Tutorial](https://indico.cern.ch/event/1151329/timetable/#8-pyhf)
 
-Tutorial last given at the [April 2021 PyHEP topical meeting](https://indico.cern.ch/event/985425/).
+ `pyhf` tutorial given at the [DANCE/CoDaS Workshop](https://indico.cern.ch/event/1151329/).
 
 **The tutorial is based off of [`pyhf` `v0.6.3`](https://pypi.org/project/pyhf/0.6.3/)**
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyhf/pyhf-tutorial/main?urlpath=lab)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyhf/tutorial-dance-codas-2022/main?urlpath=lab)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4670321.svg)](https://doi.org/10.5281/zenodo.4670321)
 
-[![Deploy Jupyter Book](https://github.com/pyhf/pyhf-tutorial/workflows/Deploy%20Jupyter%20Book/badge.svg?branch=main)](https://pyhf.github.io/pyhf-tutorial/)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/pyhf/pyhf-tutorial/main.svg)](https://results.pre-commit.ci/latest/github/pyhf/pyhf-tutorial/main)
+[![Deploy Jupyter Book](https://github.com/pyhf/tutorial-dance-codas-2022/workflows/Deploy%20Jupyter%20Book/badge.svg?branch=main)](https://pyhf.github.io/tutorial-dance-codas-2022/)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/pyhf/tutorial-dance-codas-2022/main.svg)](https://results.pre-commit.ci/latest/github/pyhf/tutorial-dance-codas-2022/main)
 
 ## Setup
 
